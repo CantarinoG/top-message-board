@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <a href="/new">
+      <button class="go-to-submit">Submit a post</button>
+    </a>
+    <ul class="messages-list">
+      <% if (messages.length) { %>
+      <ul>
+        <% messages.forEach((message) => { %>
+        <li>
+            "<%= message.text%>" <span class="username">- <%= message.user %></span>
+          <span class="date"> | <%= message.added %> </span>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </ul>
+  </body>
+</html>
